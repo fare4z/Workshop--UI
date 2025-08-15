@@ -4,102 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management System</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <title>DFP50193 - My PHP Activity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1 0 auto;
+        }
+
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="content-wrapper">
 
-    <nav class="navbar navbar-expand-lg bg-body-secondary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Task Management</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="newTask.html">Add Task</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg bg-body-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">My PHP Task</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Menu 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Menu 2</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Welcome to Task Management System</h1>
-                <p class="text-center">Manage your tasks effectively and efficiently</p>
-                <div class="text-center mt-4">
-                    <a href="newTask.html" class="btn btn-primary btn-lg">Add New Task</a>
+        <div class="container mt-5">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <!-- Start Content -->
+                    <h2 class="mb-4">Title</h2>
+                    <p>Content</p>
+
+                    <!-- End Content -->
+
+
                 </div>
             </div>
         </div>
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <h2 class="mb-4">Your Tasks</h2>
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Due Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($tasks as $task): ?>
-                        <tr>
-                            <td>
-                                <?= $task['title'] ?>
-                            </td>
-                            <td>
-                                <?= $task['description'] ?>
-                            </td>
-
-                            <td>
-
-                            </td>
-
-                            <td>
-                                <span class="badge badge-<?= $task['status'] == 'completed' ? 'success' : 'warning' ?>">
-                                    <?= ucfirst($task['status']) ?>
-                                </span>
-                            </td>
-                            <td>
-                                <a href="/tasks/edit/<?= $task['id'] ?>" class="btn btn-warning btn-sm">Update</a>
-                                <a href="/tasks/delete/<?= $task['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    </div> <!-- Close content-wrapper -->
 
     <footer class="footer bg-dark text-white text-center py-4">
         <div class="container">
-            <p>&copy; 2024 Task Management System. All Rights Reserved.</p>
+            <p>&copy; 2024 Fareez. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
